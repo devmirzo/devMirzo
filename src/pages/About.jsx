@@ -1,0 +1,239 @@
+import { motion } from "framer-motion";
+import {
+  Briefcase,
+  Star,
+  Code2,
+  Heart,
+  Languages,
+  Sparkles,
+} from "lucide-react";
+
+export default function About() {
+  const skills = [
+    { name: "Frontend Development", level: "85%", icon: <Code2 size={18} /> },
+    { name: "Mentoring & Teaching", level: "90%", icon: <Heart size={18} /> },
+    { name: "Japanese (JLPT N3)", level: "70%", icon: <Languages size={18} /> },
+  ];
+
+  return (
+    <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+        <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+        <div className="max-w-7xl mx-auto">
+
+        {/* ================= INTRO SECTION ================= */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-32">
+
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 space-y-8"
+          >
+            <div className="space-y-5">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 text-[#2c3e63] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10">
+                <Sparkles size={14} className="text-[#4f8cff]" />
+                Mening Hikoyam
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] leading-[1.05] tracking-tight">
+                Dasturlash va{" "}
+                <span className="text-[#4f8cff] font-light italic">
+                  Ta'lim uyg'unligi.
+                </span>
+              </h1>
+            </div>
+
+            <p className="text-lg md:text-xl text-[#1e293b]/80 leading-relaxed max-w-2xl font-medium">
+              Men{" "}
+              <span className="font-black text-[#1e293b] underline decoration-[#4f8cff] decoration-4 underline-offset-4">
+                Humoyun Mirzo
+              </span>
+              , muhandislik talabasi va IT-mentoriman. Maqsadim —
+              texnologiyalar orqali insonlar hayotini osonlashtirish va yangi
+              avlod dasturchilariga zamonaviy bilimlarni ulashishdir.
+            </p>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-6 pt-6">
+              <StatItem value="4.0" label="Akademik GPA" />
+              <StatItem value="N3" label="JLPT Daraja" />
+              <StatItem value="180+" label="O'quvchilar" />
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative z-10 rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] group transition-all duration-500 hover:scale-[1.02]">
+              <img
+                src="/my.png"
+                alt="Humoyun Mirzo"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-[#2c3e63]/10 group-hover:bg-transparent transition-colors duration-500" />
+            </div>
+
+            <div className="absolute inset-0 bg-[#4f8cff] rounded-[3rem] -rotate-3 -z-10 opacity-30 blur-3xl" />
+          </motion.div>
+        </div>
+
+        {/* ================= EXPERIENCE & SKILLS ================= */}
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+
+          {/* EXPERIENCE */}
+          <div className="space-y-14">
+            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] flex items-center gap-4">
+              <div className="p-4 bg-[#2c3e63] text-white rounded-2xl shadow-md">
+                <Briefcase size={26} />
+              </div>
+              Tajriba va Ta'lim
+            </h3>
+
+            <div className="space-y-10 border-l-2 border-[#2c3e63]/10 pl-8 ml-4">
+              <TimelineItem
+                year="2022 - Hozir"
+                title="FDTU Talabasi"
+                subtitle="Dasturiy Ta'minot Muhandisligi"
+                desc="Universitetda yuqori akademik ko'rsatkichlar (GPA 4.0) bilan tahsil olmoqdaman. Nazariya va amaliyotni birlashtirish ustida ishlayapman."
+              />
+
+              <TimelineItem
+                year="2023 - 2024"
+                title="IT-Universe Mentor"
+                subtitle="Front-End Kurslari Rahbari"
+                desc="Farg'ona va Andijon filiallarida 180 dan ortiq yoshlarga JavaScript va React ekotizimini o'rgatdim."
+              />
+
+              <TimelineItem
+                year="2024"
+                title="Yapon Tili (JLPT)"
+                subtitle="N3 Level Certificate"
+                desc="Xalqaro darajadagi JLPT N3 sertifikatini qo'lga kiritdim va global IT bozorini o'rganishni boshladim."
+              />
+            </div>
+          </div>
+
+          {/* SKILLS */}
+          <div className="space-y-14">
+            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] flex items-center gap-4">
+              <div className="p-4 bg-[#4f8cff] text-white rounded-2xl shadow-md">
+                <Star size={26} />
+              </div>
+              Texnik Mahorat
+            </h3>
+
+            <div className="bg-white p-10 rounded-[3rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 space-y-8">
+              {skills.map((skill, i) => (
+                <div key={i} className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-3 font-bold text-[#2c3e63]">
+                      <span className="p-2 bg-[#f9f7ed] text-[#4f8cff] rounded-xl border border-[#2c3e63]/5">
+                        {skill.icon}
+                      </span>
+                      {skill.name}
+                    </div>
+                    <span className="text-xs font-semibold text-[#1e293b]/50 uppercase tracking-widest">
+                      {skill.level}
+                    </span>
+                  </div>
+
+                  <div className="h-2.5 w-full bg-[#f3f1e6] rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: skill.level }}
+                      transition={{ duration: 1.2 }}
+                      className="h-full bg-[#2c3e63] rounded-full relative overflow-hidden"
+                    >
+                      <motion.div
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 2,
+                          ease: "linear",
+                        }}
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                      />
+                    </motion.div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Stack */}
+              <div className="pt-6 border-t border-[#2c3e63]/10">
+                <p className="text-xs font-semibold text-[#2c3e63]/40 uppercase tracking-widest mb-5 text-center">
+                  Texnologik Stack
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-3">
+                  {[
+                    "React.js",
+                    "Next.js",
+                    "TypeScript",
+                    "Tailwind",
+                    "Node.js",
+                    "Firebase",
+                    "Git",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 bg-[#f9f7ed] text-[#2c3e63] text-xs font-semibold rounded-xl tracking-wide border border-[#2c3e63]/10 hover:bg-[#2c3e63] hover:text-white hover:-translate-y-1 hover:shadow-md transition-all cursor-default"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================= COMPONENTS ================= */
+
+function StatItem({ value, label }) {
+  return (
+    <div className="text-center px-6 py-4 rounded-2xl bg-white/70 backdrop-blur border border-[#2c3e63]/5 shadow-sm hover:shadow-md transition-all">
+      <h4 className="text-3xl md:text-4xl font-black text-[#2c3e63] hover:text-[#4f8cff] transition-colors">
+        {value}
+      </h4>
+      <p className="text-[11px] font-semibold text-[#2c3e63]/40 uppercase tracking-widest mt-2">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function TimelineItem({ year, title, subtitle, desc }) {
+  return (
+    <div className="relative group">
+      <div className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#2c3e63] transition-all group-hover:border-[#4f8cff]" />
+
+      <span className="inline-block px-3 py-1 bg-[#1e293b] text-[#4f8cff] font-bold text-[10px] uppercase tracking-widest rounded-md mb-2">
+        {year}
+      </span>
+
+      <h4 className="text-xl md:text-2xl font-black text-[#2c3e63]">
+        {title}
+      </h4>
+
+      <p className="text-sm font-semibold text-[#4f8cff] italic opacity-80">
+        {subtitle}
+      </p>
+
+      <p className="text-[#1e293b]/70 mt-3 leading-relaxed">
+        {desc}
+      </p>
+    </div>
+  );
+}
