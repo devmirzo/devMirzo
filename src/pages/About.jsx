@@ -23,7 +23,7 @@ export default function About() {
         <title>Haqida | Abdurasuljonov Humoyun Mirzo</title>
         <meta name="description" content="Abdurasuljonov Humoyun Mirzo haqida ma'lumot. Muhandislik talabasi va IT-mentor. Tajriba va texnik mahoratlar." />
       </Helmet>
-      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] dark:from-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
         <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
         <div className="max-w-7xl mx-auto">
 
@@ -39,12 +39,12 @@ export default function About() {
             className="lg:col-span-7 space-y-8"
           >
             <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 text-[#2c3e63] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 text-[#2c3e63] dark:text-[#f8fafc] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10 dark:border-white/10">
                 <Sparkles size={14} className="text-[#4f8cff]" />
                 Mening Hikoyam
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] leading-[1.05] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1.05] tracking-tight">
                 Dasturlash va{" "}
                 <span className="text-[#4f8cff] font-light italic">
                   Ta'lim uyg'unligi.
@@ -52,9 +52,9 @@ export default function About() {
               </h1>
             </div>
 
-            <p className="text-lg md:text-xl text-[#1e293b]/80 leading-relaxed max-w-2xl font-medium">
+            <p className="text-lg md:text-xl text-[#1e293b]/80 dark:text-[#f8fafc]/80 leading-relaxed max-w-2xl font-medium">
               Men{" "}
-              <span className="font-black text-[#1e293b] underline decoration-[#4f8cff] decoration-4 underline-offset-4">
+              <span className="font-black text-[#1e293b] dark:text-[#f8fafc] underline decoration-[#4f8cff] decoration-4 underline-offset-4">
                 Humoyun Mirzo
               </span>
               , muhandislik talabasi va IT-mentoriman. Maqsadim —
@@ -78,13 +78,13 @@ export default function About() {
             viewport={{ once: true }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative z-10 rounded-[3rem] overflow-hidden border-[8px] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] group transition-all duration-500 hover:scale-[1.02]">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden border-[8px] border-white dark:border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] group transition-all duration-500 hover:scale-[1.02]">
               <img
                 src="/my.png"
                 alt="Humoyun Mirzo"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-[#2c3e63]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute inset-0 bg-[#2c3e63]/10 dark:bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
             </div>
 
             <div className="absolute inset-0 bg-[#4f8cff] rounded-[3rem] -rotate-3 -z-10 opacity-30 blur-3xl" />
@@ -96,14 +96,14 @@ export default function About() {
 
           {/* EXPERIENCE */}
           <div className="space-y-14">
-            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] flex items-center gap-4">
-              <div className="p-4 bg-[#2c3e63] text-white rounded-2xl shadow-md">
+            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] dark:text-[#f8fafc] flex items-center gap-4">
+              <div className="p-4 bg-[#2c3e63] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] rounded-2xl shadow-md">
                 <Briefcase size={26} />
               </div>
               Tajriba va Ta'lim
             </h3>
 
-            <div className="space-y-10 border-l-2 border-[#2c3e63]/10 pl-8 ml-4">
+            <div className="space-y-10 border-l-2 border-[#2c3e63]/10 dark:border-white/10 pl-8 ml-4">
               <TimelineItem
                 year="2022 - Hozir"
                 title="FDTU Talabasi"
@@ -129,34 +129,34 @@ export default function About() {
 
           {/* SKILLS */}
           <div className="space-y-14">
-            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] flex items-center gap-4">
+            <h3 className="text-3xl md:text-4xl font-black text-[#2c3e63] dark:text-[#f8fafc] flex items-center gap-4">
               <div className="p-4 bg-[#4f8cff] text-white rounded-2xl shadow-md">
                 <Star size={26} />
               </div>
               Texnik Mahorat
             </h3>
 
-            <div className="bg-white p-10 rounded-[3rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 space-y-8">
+            <div className="bg-white dark:bg-[#1e293b] p-10 rounded-[3rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 dark:border-white/5 space-y-8 transition-colors">
               {skills.map((skill, i) => (
                 <div key={i} className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-3 font-bold text-[#2c3e63]">
-                      <span className="p-2 bg-[#f9f7ed] text-[#4f8cff] rounded-xl border border-[#2c3e63]/5">
+                    <div className="flex items-center gap-3 font-bold text-[#2c3e63] dark:text-[#f8fafc]">
+                      <span className="p-2 bg-[#f9f7ed] dark:bg-[#0f172a] text-[#4f8cff] rounded-xl border border-[#2c3e63]/5 dark:border-white/5">
                         {skill.icon}
                       </span>
                       {skill.name}
                     </div>
-                    <span className="text-xs font-semibold text-[#1e293b]/50 uppercase tracking-widest">
+                    <span className="text-xs font-semibold text-[#1e293b]/50 dark:text-[#f8fafc]/50 uppercase tracking-widest">
                       {skill.level}
                     </span>
                   </div>
 
-                  <div className="h-2.5 w-full bg-[#f3f1e6] rounded-full overflow-hidden">
+                  <div className="h-2.5 w-full bg-[#f3f1e6] dark:bg-[#0f172a] rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: skill.level }}
                       transition={{ duration: 1.2 }}
-                      className="h-full bg-[#2c3e63] rounded-full relative overflow-hidden"
+                      className="h-full bg-[#2c3e63] dark:bg-[#4f8cff] rounded-full relative overflow-hidden"
                     >
                       <motion.div
                         animate={{ x: ["-100%", "100%"] }}
@@ -173,8 +173,8 @@ export default function About() {
               ))}
 
               {/* Stack */}
-              <div className="pt-6 border-t border-[#2c3e63]/10">
-                <p className="text-xs font-semibold text-[#2c3e63]/40 uppercase tracking-widest mb-5 text-center">
+              <div className="pt-6 border-t border-[#2c3e63]/10 dark:border-white/10">
+                <p className="text-xs font-semibold text-[#2c3e63]/40 dark:text-[#f8fafc]/40 uppercase tracking-widest mb-5 text-center">
                   Texnologik Stack
                 </p>
 
@@ -190,7 +190,7 @@ export default function About() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-2 bg-[#f9f7ed] text-[#2c3e63] text-xs font-semibold rounded-xl tracking-wide border border-[#2c3e63]/10 hover:bg-[#2c3e63] hover:text-white hover:-translate-y-1 hover:shadow-md transition-all cursor-default"
+                      className="px-4 py-2 bg-[#f9f7ed] dark:bg-[#0f172a] text-[#2c3e63] dark:text-[#f8fafc] text-xs font-semibold rounded-xl tracking-wide border border-[#2c3e63]/10 dark:border-white/10 hover:bg-[#2c3e63] dark:hover:bg-[#4f8cff] hover:text-white dark:hover:text-[#0f172a] hover:-translate-y-1 hover:shadow-md transition-all cursor-default"
                     >
                       {tag}
                     </span>
@@ -211,11 +211,11 @@ export default function About() {
 
 function StatItem({ value, label }) {
   return (
-    <div className="text-center px-6 py-4 rounded-2xl bg-white/70 backdrop-blur border border-[#2c3e63]/5 shadow-sm hover:shadow-md transition-all">
-      <h4 className="text-3xl md:text-4xl font-black text-[#2c3e63] hover:text-[#4f8cff] transition-colors">
+    <div className="text-center px-6 py-4 rounded-2xl bg-white/70 dark:bg-[#1e293b]/70 backdrop-blur border border-[#2c3e63]/5 dark:border-white/5 shadow-sm hover:shadow-md transition-all">
+      <h4 className="text-3xl md:text-4xl font-black text-[#2c3e63] dark:text-[#f8fafc] hover:text-[#4f8cff] transition-colors">
         {value}
       </h4>
-      <p className="text-[11px] font-semibold text-[#2c3e63]/40 uppercase tracking-widest mt-2">
+      <p className="text-[11px] font-semibold text-[#2c3e63]/40 dark:text-[#f8fafc]/40 uppercase tracking-widest mt-2">
         {label}
       </p>
     </div>
@@ -225,13 +225,13 @@ function StatItem({ value, label }) {
 function TimelineItem({ year, title, subtitle, desc }) {
   return (
     <div className="relative group">
-      <div className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-[#2c3e63] transition-all group-hover:border-[#4f8cff]" />
+      <div className="absolute -left-[30px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-[#0f172a] border-2 border-[#2c3e63] dark:border-[#4f8cff] transition-all group-hover:border-[#4f8cff]" />
 
-      <span className="inline-block px-3 py-1 bg-[#1e293b] text-[#4f8cff] font-bold text-[10px] uppercase tracking-widest rounded-md mb-2">
+      <span className="inline-block px-3 py-1 bg-[#1e293b] dark:bg-[#4f8cff] text-[#4f8cff] dark:text-[#0f172a] font-bold text-[10px] uppercase tracking-widest rounded-md mb-2">
         {year}
       </span>
 
-      <h4 className="text-xl md:text-2xl font-black text-[#2c3e63]">
+      <h4 className="text-xl md:text-2xl font-black text-[#2c3e63] dark:text-[#f8fafc]">
         {title}
       </h4>
 
@@ -239,7 +239,7 @@ function TimelineItem({ year, title, subtitle, desc }) {
         {subtitle}
       </p>
 
-      <p className="text-[#1e293b]/70 mt-3 leading-relaxed">
+      <p className="text-[#1e293b]/70 dark:text-[#f8fafc]/70 mt-3 leading-relaxed">
         {desc}
       </p>
     </div>

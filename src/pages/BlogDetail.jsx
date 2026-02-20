@@ -58,7 +58,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
   }
 
   return (
-    <div className="bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] min-h-screen selection:bg-[#4f8cff] selection:text-white">
+    <div className="bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] dark:from-[#0f172a] dark:to-[#1e293b] min-h-screen selection:bg-[#4f8cff] selection:text-white transition-colors duration-500">
       <Helmet>
         <title>{post.title} | Abdurasuljonov Humoyun Mirzo</title>
         <meta name="description" content={`${post.title} - Abdurasuljonov Humoyun Mirzo blogi. ${post.excerpt}`} />
@@ -77,9 +77,9 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
           
           <Link
             to="/blog"
-            className="inline-flex items-center gap-3 text-xs font-semibold text-[#2c3e63]/60 uppercase tracking-[0.35em] hover:text-[#4f8cff] transition group"
+            className="inline-flex items-center gap-3 text-xs font-semibold text-[#2c3e63]/60 dark:text-[#f8fafc]/60 uppercase tracking-[0.35em] hover:text-[#4f8cff] transition group"
           >
-            <div className="p-2 rounded-full border border-[#2c3e63]/10 group-hover:border-[#4f8cff] group-hover:-translate-x-1 transition">
+            <div className="p-2 rounded-full border border-[#2c3e63]/10 dark:border-white/10 group-hover:border-[#4f8cff] group-hover:-translate-x-1 transition">
               <ArrowLeft size={16} />
             </div>
             Ortga qaytish
@@ -90,15 +90,15 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
               {post.category}
             </span>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] leading-[1.05] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1.05] tracking-tight">
               {post.title}
             </h1>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 text-xs font-semibold text-[#2c3e63]/50 uppercase tracking-wider pt-6 border-t border-[#2c3e63]/10">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-xs font-semibold text-[#2c3e63]/50 dark:text-[#f8fafc]/50 uppercase tracking-wider pt-6 border-t border-[#2c3e63]/10 dark:border-white/10">
             
-            <div className="flex items-center gap-4 text-[#2c3e63]">
-              <div className="w-11 h-11 rounded-2xl bg-[#2c3e63] p-[3px] overflow-hidden">
+            <div className="flex items-center gap-4 text-[#2c3e63] dark:text-[#f8fafc]">
+              <div className="w-11 h-11 rounded-2xl bg-[#2c3e63] dark:bg-[#1e293b] p-[3px] overflow-hidden">
                 <img
                   src="/avatar.png"
                   alt="Humoyun Mirzo"
@@ -132,7 +132,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative aspect-video rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border-[8px] border-white"
+          className="relative aspect-video rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] border-[8px] border-white dark:border-[#1e293b]"
         >
           <img
             src={post.image}
@@ -152,7 +152,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
             {[Share2, Bookmark, MessageCircle].map((Icon, i) => (
               <button
                 key={i}
-                className="p-4 bg-white rounded-2xl text-[#2c3e63]/40 hover:text-[#4f8cff] hover:-translate-y-1 shadow-sm border border-[#2c3e63]/5 transition"
+                className="p-4 bg-white dark:bg-[#1e293b] rounded-2xl text-[#2c3e63]/40 dark:text-[#f8fafc]/40 hover:text-[#4f8cff] hover:-translate-y-1 shadow-sm border border-[#2c3e63]/5 dark:border-white/5 transition"
               >
                 <Icon size={20} />
               </button>
@@ -161,7 +161,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
 
           {/* Article */}
           <article className="flex-1">
-            <div className="bg-white p-8 md:p-14 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.06)] border border-[#2c3e63]/5">
+            <div className="bg-white dark:bg-[#1e293b] p-8 md:p-14 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.06)] border border-[#2c3e63]/5 dark:border-white/5 transition-colors">
               
               {/* Excerpt */}
               <div className="relative mb-14">
@@ -169,20 +169,20 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
                   className="absolute -top-6 -left-6 text-[#4f8cff]/20"
                   size={70}
                 />
-                <p className="text-xl md:text-2xl font-bold text-[#2c3e63] leading-relaxed italic relative z-10">
+                <p className="text-xl md:text-2xl font-bold text-[#2c3e63] dark:text-[#f8fafc] leading-relaxed italic relative z-10">
                   {post.excerpt}
                 </p>
               </div>
 
-              <div className="prose prose-lg max-w-none prose-headings:text-[#2c3e63] prose-p:text-[#2c3e63]/80 prose-strong:text-[#1f2937]">
+              <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-[#2c3e63] dark:prose-headings:text-[#f8fafc] prose-p:text-[#2c3e63]/80 dark:prose-p:text-[#f8fafc]/80 prose-strong:text-[#1f2937] dark:prose-strong:text-[#f8fafc]">
                 <p className="whitespace-pre-line">{post.content}</p>
 
-                <div className="my-14 p-8 bg-[#f9f7ed] rounded-2xl border border-[#4f8cff]/20 relative overflow-hidden group">
+                <div className="my-14 p-8 bg-[#f9f7ed] dark:bg-[#0f172a] rounded-2xl border border-[#4f8cff]/20 relative overflow-hidden group">
                   <Sparkles className="absolute top-5 right-5 text-[#4f8cff]/40 group-hover:rotate-12 transition" />
-                  <h3 className="text-xl font-bold text-[#2c3e63] mb-3">
+                  <h3 className="text-xl font-bold text-[#2c3e63] dark:text-[#f8fafc] mb-3">
                     Muhim nuqta: Barqarorlik
                   </h3>
-                  <p className="m-0 text-[#2c3e63]/80">
+                  <p className="m-0 text-[#2c3e63]/80 dark:text-[#f8fafc]/80">
                     Dasturlashda trendlar ortidan quvish emas, fundamental bilimlarni mustahkamlash muhimdir.
                   </p>
                 </div>
@@ -200,9 +200,9 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-14 bg-[#2c3e63] p-8 md:p-14 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-10 text-center md:text-left text-white shadow-2xl"
+              className="mt-14 bg-[#2c3e63] dark:bg-[#1e293b] p-8 md:p-14 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-10 text-center md:text-left text-white shadow-2xl border border-white/5 transition-colors"
             >
-              <div className="w-32 h-32 bg-white rounded-3xl overflow-hidden border-4 border-white/10">
+              <div className="w-32 h-32 bg-white dark:bg-[#0f172a] rounded-3xl overflow-hidden border-4 border-white/10">
                 <img
                   src="/avatar.png"
                   alt="Muallif"
@@ -220,14 +220,14 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
                   </p>
                 </div>
 
-                <p className="text-white/70 max-w-lg">
+                <p className="text-white/70 dark:text-white/60 max-w-lg">
                   Murakkab texnologik jarayonlarni sodda va tushunarli
                   ko'rinishda yetkazishga harakat qilaman.
                 </p>
 
                 <Link
                   to="/contact"
-                  className="inline-block px-8 py-3 bg-[#4f8cff] text-[#1f2937] rounded-xl font-semibold hover:bg-white transition"
+                  className="inline-block px-8 py-3 bg-[#4f8cff] text-[#1f2937] dark:text-[#0f172a] rounded-xl font-semibold hover:bg-white dark:hover:bg-white transition"
                 >
                   Savol yo'llash
                 </Link>

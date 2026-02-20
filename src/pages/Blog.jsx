@@ -62,7 +62,7 @@ export default function Blog() {
         <title>Blog | Abdurasuljonov Humoyun Mirzo</title>
         <meta name="description" content="Abdurasuljonov Humoyun Mirzo blogi. Dasturlash, tillar va shaxsiy rivojlanish haqidagi maqolalar." />
       </Helmet>
-      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] dark:from-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
         <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
       <div className="max-w-7xl mx-auto">
 
@@ -74,34 +74,34 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 text-[#2c3e63] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 text-[#2c3e63] dark:text-[#f8fafc] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10 dark:border-white/10">
               <Sparkles size={14} className="text-[#4f8cff]" />
               Bilimlar xazinasi
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-tight">
               Fikrlar va{" "}
               <span className="text-[#4f8cff] italic font-light">
                 Tajribalar.
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#1e293b]/70 leading-relaxed font-medium max-w-2xl">
+            <p className="text-lg md:text-xl text-[#1e293b]/70 dark:text-[#f8fafc]/70 leading-relaxed font-medium max-w-2xl">
               Dasturlash, tillar va shaxsiy rivojlanish haqidagi maqolalarimni
               shu yerda o'qishingiz mumkin.
             </p>
           </motion.div>
 
           {/* ================= FILTER BAR ================= */}
-          <div className="flex flex-col lg:flex-row gap-6 lg:items-center justify-between border-b border-[#2c3e63]/10 pb-8">
+          <div className="flex flex-col lg:flex-row gap-6 lg:items-center justify-between border-b border-[#2c3e63]/10 dark:border-white/10 pb-8">
             <div className="flex gap-3 overflow-x-auto no-scrollbar">
               {categories.map((cat, i) => (
                 <button
                   key={i}
                   className={`px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wide transition-all whitespace-nowrap ${
                     i === 0
-                      ? "bg-[#2c3e63] text-white shadow-md"
-                      : "bg-white text-[#2c3e63]/60 border border-[#2c3e63]/10 hover:text-[#4f8cff] hover:border-[#4f8cff]"
+                      ? "bg-[#2c3e63] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] shadow-md"
+                      : "bg-white dark:bg-[#1e293b] text-[#2c3e63]/60 dark:text-[#f8fafc]/60 border border-[#2c3e63]/10 dark:border-white/10 hover:text-[#4f8cff] hover:border-[#4f8cff]"
                   }`}
                 >
                   {cat}
@@ -112,12 +112,12 @@ export default function Blog() {
             <div className="relative w-full lg:w-80">
               <Search
                 size={18}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2c3e63]/40"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2c3e63]/40 dark:text-[#f8fafc]/40"
               />
               <input
                 type="text"
                 placeholder="Maqola qidirish..."
-                className="w-full pl-12 pr-4 py-3 rounded-xl bg-white border border-[#2c3e63]/10 focus:border-[#4f8cff] focus:ring-2 focus:ring-[#4f8cff]/30 outline-none text-[#1e293b] font-medium"
+                className="w-full pl-12 pr-4 py-3 rounded-xl bg-white dark:bg-[#1e293b] border border-[#2c3e63]/10 dark:border-white/10 focus:border-[#4f8cff] dark:focus:border-[#4f8cff] focus:ring-2 focus:ring-[#4f8cff]/30 outline-none text-[#1e293b] dark:text-[#f8fafc] font-medium"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Blog() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b] via-transparent to-transparent opacity-60" />
 
                   <div className="absolute top-5 left-5">
-                    <span className="px-4 py-1.5 bg-[#4f8cff] text-white rounded-lg text-[10px] font-bold uppercase tracking-widest">
+                    <span className="px-4 py-1.5 bg-[#4f8cff] text-white dark:text-[#0f172a] rounded-lg text-[10px] font-bold uppercase tracking-widest">
                       {post.category}
                     </span>
                   </div>
@@ -171,11 +171,11 @@ export default function Blog() {
                 </div>
 
                 <div className="pt-6 space-y-4">
-                  <p className="text-[#2c3e63]/70 line-clamp-2 leading-relaxed">
+                  <p className="text-[#2c3e63]/70 dark:text-[#f8fafc]/70 line-clamp-2 leading-relaxed">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#2c3e63] group-hover:gap-4 transition-all">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#2c3e63] dark:text-[#f8fafc] group-hover:gap-4 transition-all">
                     Batafsil
                     <ArrowRight size={18} className="text-[#4f8cff]" />
                   </div>
@@ -191,7 +191,7 @@ export default function Blog() {
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-32 p-12 md:p-20 bg-[#2c3e63] rounded-[3rem] relative overflow-hidden"
+          className="mt-32 p-12 md:p-20 bg-[#2c3e63] dark:bg-[#1e293b] rounded-[3rem] relative overflow-hidden transition-colors"
         >
           <div className="absolute -top-20 -right-20 opacity-[0.03] text-white">
             <Hash size={400} />
@@ -219,10 +219,10 @@ export default function Blog() {
                 <input
                   type="email"
                   placeholder="Email manzilingiz"
-                  className="w-full px-5 py-3 rounded-xl bg-white text-[#1e293b] outline-none focus:ring-2 focus:ring-[#4f8cff]"
+                  className="w-full px-5 py-3 rounded-xl bg-white dark:bg-[#0f172a] text-[#1e293b] dark:text-[#f8fafc] outline-none focus:ring-2 focus:ring-[#4f8cff]"
                 />
 
-                <button className="w-full py-3 bg-[#4f8cff] text-white font-semibold rounded-xl hover:bg-white hover:text-[#2c3e63] transition-all flex items-center justify-center gap-2">
+                <button className="w-full py-3 bg-[#4f8cff] text-white dark:text-[#0f172a] font-semibold rounded-xl hover:bg-white dark:hover:bg-white hover:text-[#2c3e63] transition-all flex items-center justify-center gap-2">
                   Obuna bo'lish <ArrowRight size={18} />
                 </button>
 

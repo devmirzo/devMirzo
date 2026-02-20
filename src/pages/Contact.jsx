@@ -40,7 +40,7 @@ export default function Contact() {
         <title>Bog'lanish | Abdurasuljonov Humoyun Mirzo</title>
         <meta name="description" content="Abdurasuljonov Humoyun Mirzo bilan bog'lanish. Loyiha takliflari yoki savollar uchun xabar yuboring." />
       </Helmet>
-      <div className="pt-28 md:pt-36 pb-24 px-5 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+      <div className="pt-28 md:pt-36 pb-24 px-5 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] dark:from-[#0f172a] dark:to-[#1e293b] transition-colors duration-500">
         <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1><div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
@@ -54,20 +54,20 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#2c3e63] text-white text-[11px] font-semibold uppercase tracking-widest shadow-lg"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#2c3e63] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] text-[11px] font-semibold uppercase tracking-widest shadow-lg"
               >
-                <Sparkles size={14} className="text-[#4f8cff]" />
+                <Sparkles size={14} className="text-[#4f8cff] dark:text-[#0f172a]" />
                 Hamkorlikka tayyorman
               </motion.div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-tight">
                 Keling, birga <br />
                 <span className="text-[#4f8cff] italic font-light">
                   yaratamiz.
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-[#2c3e63]/70 leading-relaxed max-w-md font-medium">
+              <p className="text-lg md:text-xl text-[#2c3e63]/70 dark:text-[#f8fafc]/70 leading-relaxed max-w-md font-medium">
                 Yangi loyiha, mentoring yoki IT haqida suhbatlashish uchun xabar
                 qoldiring. Men doimo yangi g'oyalar uchun ochiqman.
               </p>
@@ -82,24 +82,24 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ x: 8 }}
-                  className="flex items-center justify-between p-6 bg-white rounded-2xl border border-[#2c3e63]/5 shadow-sm hover:shadow-md transition-all group"
+                  className="flex items-center justify-between p-6 bg-white dark:bg-[#1e293b] rounded-2xl border border-[#2c3e63]/5 dark:border-white/5 shadow-sm hover:shadow-md transition-all group"
                 >
                   <div className="flex items-center gap-5">
-                    <div className="p-3 bg-[#f3f1e6] text-[#2c3e63] rounded-xl group-hover:text-[#4f8cff] transition">
+                    <div className="p-3 bg-[#f3f1e6] dark:bg-[#0f172a] text-[#2c3e63] dark:text-[#f8fafc] rounded-xl group-hover:text-[#4f8cff] transition">
                       {method.icon}
                     </div>
                     <div>
-                      <p className="text-[10px] font-semibold text-[#2c3e63]/50 uppercase tracking-wider">
+                      <p className="text-[10px] font-semibold text-[#2c3e63]/50 dark:text-[#f8fafc]/50 uppercase tracking-wider">
                         {method.label}
                       </p>
-                      <p className="text-lg font-bold text-[#2c3e63] group-hover:text-[#4f8cff] transition">
+                      <p className="text-lg font-bold text-[#2c3e63] dark:text-[#f8fafc] group-hover:text-[#4f8cff] transition">
                         {method.value}
                       </p>
                     </div>
                   </div>
                   <ArrowUpRight
                     size={22}
-                    className="text-[#2c3e63]/30 group-hover:text-[#4f8cff] transition group-hover:rotate-12"
+                    className="text-[#2c3e63]/30 dark:text-[#f8fafc]/30 group-hover:text-[#4f8cff] transition group-hover:rotate-12"
                   />
                 </motion.a>
               ))}
@@ -113,10 +113,10 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="lg:col-span-7"
           >
-            <div className="bg-white p-8 md:p-14 rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 relative overflow-hidden group">
+            <div className="bg-white dark:bg-[#1e293b] p-8 md:p-14 rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 dark:border-white/5 relative overflow-hidden group transition-colors">
               
               {/* Decorative Icon */}
-              <div className="absolute -top-20 -right-20 opacity-[0.04] pointer-events-none text-[#2c3e63] transition-transform group-hover:rotate-6 duration-700">
+              <div className="absolute -top-20 -right-20 opacity-[0.04] pointer-events-none text-[#2c3e63] dark:text-[#f8fafc] transition-transform group-hover:rotate-6 duration-700">
                 <MessageSquare size={350} />
               </div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
 
                 <TextAreaField />
 
-                <button className="w-full py-5 bg-[#2c3e63] text-white font-semibold rounded-2xl hover:bg-[#1f2937] transition-all shadow-xl flex items-center justify-center gap-3 text-lg uppercase tracking-wider relative overflow-hidden group">
+                <button className="w-full py-5 bg-[#2c3e63] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] font-semibold rounded-2xl hover:bg-[#1f2937] dark:hover:bg-white transition-all shadow-xl flex items-center justify-center gap-3 text-lg uppercase tracking-wider relative overflow-hidden group">
                   <motion.div className="absolute inset-0 bg-[#4f8cff]/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   <span className="relative z-10">Xabarni yuborish</span>
                   <Send
@@ -153,7 +153,7 @@ export default function Contact() {
             </div>
 
             {/* Footer Info */}
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-8 text-[#2c3e63]/50 font-semibold text-xs uppercase tracking-widest">
+            <div className="mt-14 flex flex-wrap items-center justify-center gap-8 text-[#2c3e63]/50 dark:text-[#f8fafc]/50 font-semibold text-xs uppercase tracking-widest">
               <div className="flex items-center gap-2">
                 <MapPin size={18} className="text-[#4f8cff]" />
                 Farg'ona, O'zbekiston
@@ -165,7 +165,7 @@ export default function Contact() {
                 href="https://github.com/devmirzo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#1f2937] transition"
+                className="flex items-center gap-2 hover:text-[#1f2937] dark:hover:text-[#f8fafc] transition"
               >
                 <Github size={18} className="text-[#4f8cff]" />
                 devmirzo
@@ -184,13 +184,13 @@ export default function Contact() {
 function InputField({ label, placeholder, type }) {
   return (
     <div className="space-y-3">
-      <label className="text-[10px] font-semibold text-[#2c3e63]/60 uppercase tracking-wider ml-2">
+      <label className="text-[10px] font-semibold text-[#2c3e63]/60 dark:text-[#f8fafc]/60 uppercase tracking-wider ml-2">
         {label}
       </label>
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full px-6 py-4 rounded-xl bg-[#f9f7ed] ring-2 ring-[#2c3e63]/5 focus:ring-4 focus:ring-[#4f8cff]/40 outline-none transition font-medium text-[#1f2937] placeholder:text-[#2c3e63]/30"
+        className="w-full px-6 py-4 rounded-xl bg-[#f9f7ed] dark:bg-[#0f172a] ring-2 ring-[#2c3e63]/5 dark:ring-white/5 focus:ring-4 focus:ring-[#4f8cff]/40 dark:focus:ring-[#4f8cff]/40 outline-none transition font-medium text-[#1f2937] dark:text-[#f8fafc] placeholder:text-[#2c3e63]/30 dark:placeholder:text-[#f8fafc]/30"
       />
     </div>
   );
@@ -199,17 +199,17 @@ function InputField({ label, placeholder, type }) {
 function SelectField() {
   return (
     <div className="space-y-3">
-      <label className="text-[10px] font-semibold text-[#2c3e63]/60 uppercase tracking-wider ml-2">
+      <label className="text-[10px] font-semibold text-[#2c3e63]/60 dark:text-[#f8fafc]/60 uppercase tracking-wider ml-2">
         Mavzuni tanlang
       </label>
       <div className="relative">
-        <select className="w-full px-6 py-4 rounded-xl bg-[#f9f7ed] ring-2 ring-[#2c3e63]/5 focus:ring-4 focus:ring-[#4f8cff]/40 outline-none appearance-none cursor-pointer font-medium text-[#1f2937]">
-          <option>Loyiha buyurtmasi</option>
-          <option>IT-Mentoring & Kurslar</option>
-          <option>Hamkorlik taklifi</option>
-          <option>Boshqa masalalar</option>
+        <select className="w-full px-6 py-4 rounded-xl bg-[#f9f7ed] dark:bg-[#0f172a] ring-2 ring-[#2c3e63]/5 dark:ring-white/5 focus:ring-4 focus:ring-[#4f8cff]/40 dark:focus:ring-[#4f8cff]/40 outline-none appearance-none cursor-pointer font-medium text-[#1f2937] dark:text-[#f8fafc]">
+          <option className="dark:bg-[#0f172a]">Loyiha buyurtmasi</option>
+          <option className="dark:bg-[#0f172a]">IT-Mentoring & Kurslar</option>
+          <option className="dark:bg-[#0f172a]">Hamkorlik taklifi</option>
+          <option className="dark:bg-[#0f172a]">Boshqa masalalar</option>
         </select>
-        <div className="absolute right-5 top-1/2 -translate-y-1/2 text-[#2c3e63]/30 pointer-events-none">
+        <div className="absolute right-5 top-1/2 -translate-y-1/2 text-[#2c3e63]/30 dark:text-[#f8fafc]/30 pointer-events-none">
           <ArrowUpRight size={18} className="rotate-90" />
         </div>
       </div>
@@ -220,13 +220,13 @@ function SelectField() {
 function TextAreaField() {
   return (
     <div className="space-y-3">
-      <label className="text-[10px] font-semibold text-[#2c3e63]/60 uppercase tracking-wider ml-2">
+      <label className="text-[10px] font-semibold text-[#2c3e63]/60 dark:text-[#f8fafc]/60 uppercase tracking-wider ml-2">
         Sizning xabaringiz
       </label>
       <textarea
         rows="5"
         placeholder="Qanday yordam bera olaman?"
-        className="w-full px-6 py-4 rounded-2xl bg-[#f9f7ed] ring-2 ring-[#2c3e63]/5 focus:ring-4 focus:ring-[#4f8cff]/40 outline-none resize-none font-medium text-[#1f2937] placeholder:text-[#2c3e63]/30"
+        className="w-full px-6 py-4 rounded-2xl bg-[#f9f7ed] dark:bg-[#0f172a] ring-2 ring-[#2c3e63]/5 dark:ring-white/5 focus:ring-4 focus:ring-[#4f8cff]/40 dark:focus:ring-[#4f8cff]/40 outline-none resize-none font-medium text-[#1f2937] dark:text-[#f8fafc] placeholder:text-[#2c3e63]/30 dark:placeholder:text-[#f8fafc]/30"
       ></textarea>
     </div>
   );

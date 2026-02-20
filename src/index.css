@@ -1,5 +1,34 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* @import "tailwindcss"; */
+
+/* Enable class-based dark mode utilities in v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #4f8cff;
+}
+
+:root {
+  --bg-primary: #f9f7ed;
+  --text-primary: #2c3e63;
+  --text-secondary: rgba(44, 62, 99, 0.7);
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(248, 250, 252, 0.7);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition-property: background-color, color, border-color;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    @apply border-[#2c3e63]/10 dark:border-white/10;
+  }
+}

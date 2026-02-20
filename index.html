@@ -1,13 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Abdurasuljonov Humoyun Mirzo",
   "url": "https://devmirzo.uz",
-  "image": "https://devmirzo.uz/my-picture.png",
+  "image": "https://github.com/devmirzo/devMirzo/blob/main/public/logo-bg.png",
   "jobTitle": "Frontend Developer",
   "description": "Frontend Developer specializing in React and modern web technologies. Mentor at IT-Universe.",
   "sameAs": [
