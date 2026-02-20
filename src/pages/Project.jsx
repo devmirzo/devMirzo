@@ -8,6 +8,8 @@ import {
   Monitor,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 export default function Projects() {
   const projects = [
     {
@@ -40,8 +42,13 @@ export default function Projects() {
   ];
 
   return (
-    <section className="pt-28 md:pt-36 pb-24 px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] selection:bg-[#4f8cff] selection:text-white">
-        <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+    <>
+      <Helmet>
+        <title>Loyihalar | Abdurasuljonov Humoyun Mirzo</title>
+        <meta name="description" content="Abdurasuljonov Humoyun Mirzo tomonidan yaratilgan tanlangan loyihalar. Web ilovalar va raqamli yechimlar." />
+      </Helmet>
+      <section className="pt-28 md:pt-36 pb-24 px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] selection:bg-[#4f8cff] selection:text-white">
+        <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER */}
@@ -191,5 +198,6 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }

@@ -8,6 +8,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 export default function About() {
   const skills = [
     { name: "Frontend Development", level: "85%", icon: <Code2 size={18} /> },
@@ -16,8 +18,13 @@ export default function About() {
   ];
 
   return (
-    <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
-        <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+    <>
+      <Helmet>
+        <title>Haqida | Abdurasuljonov Humoyun Mirzo</title>
+        <meta name="description" content="Abdurasuljonov Humoyun Mirzo haqida ma'lumot. Muhandislik talabasi va IT-mentor. Tajriba va texnik mahoratlar." />
+      </Helmet>
+      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+        <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
         <div className="max-w-7xl mx-auto">
 
         {/* ================= INTRO SECTION ================= */}
@@ -196,6 +203,7 @@ export default function About() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

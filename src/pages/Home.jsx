@@ -26,14 +26,15 @@ export default function Home() {
 
     <>
     <Helmet>
-        <title>Humoyun Mirzo | Frontend Developer</title>
+        <title>Abdurasuljonov Humoyun Mirzo | Frontend Developer</title>
         <meta
           name="description"
-          content="Humoyun Mirzo - Frontend Developer. Modern, minimal and high-performance web interfaces."
+          content="Abdurasuljonov Humoyun Mirzo - Professional Frontend Developer specializing in React and modern web applications. IT-Universe mentor."
         />
+        <meta name="keywords" content="Abdurasuljonov Humoyun Mirzo, Humoyun Mirzo, Frontend Developer, React Developer, Portfolio" />
       </Helmet>
     <section className="min-h-screen flex items-center pt-24 md:pt-32 pb-16 overflow-hidden bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] relative">
-      <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+      <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
       {/* Background Blur Effects */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4f8cff]/10 rounded-full blur-[140px] -z-10" />
       <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#2c3e63]/10 rounded-full blur-[120px] -z-10" />

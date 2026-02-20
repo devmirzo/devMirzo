@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { Helmet } from "react-helmet-async";
+
 export default function Blog() {
   const categories = [
     "Barchasi",
@@ -55,8 +57,13 @@ export default function Blog() {
   ];
 
   return (
-    <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
-        <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+    <>
+      <Helmet>
+        <title>Blog | Abdurasuljonov Humoyun Mirzo</title>
+        <meta name="description" content="Abdurasuljonov Humoyun Mirzo blogi. Dasturlash, tillar va shaxsiy rivojlanish haqidagi maqolalar." />
+      </Helmet>
+      <section className="pt-28 md:pt-36 pb-20 md:pb-28 px-4 sm:px-6 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+        <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
       <div className="max-w-7xl mx-auto">
 
         {/* ================= HEADER ================= */}
@@ -229,5 +236,6 @@ export default function Blog() {
 
       </div>
     </section>
+    </>
   );
 }

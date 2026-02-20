@@ -11,6 +11,8 @@ import {
   Quote,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 export default function BlogDetail() {
   const { id } = useParams();
 
@@ -57,6 +59,10 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
 
   return (
     <div className="bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6] min-h-screen selection:bg-[#4f8cff] selection:text-white">
+      <Helmet>
+        <title>{post.title} | Abdurasuljonov Humoyun Mirzo</title>
+        <meta name="description" content={`${post.title} - Abdurasuljonov Humoyun Mirzo blogi. ${post.excerpt}`} />
+      </Helmet>
       
       {/* Progress bar */}
       <motion.div
@@ -66,7 +72,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
 
       {/* HERO */}
       <header className="pt-28 md:pt-36 pb-16 md:pb-24 px-5">
-          <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1>
+          <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1>
         <div className="max-w-4xl mx-auto text-center space-y-10">
           
           <Link
@@ -103,7 +109,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
                 <p className="text-[10px] opacity-50 leading-none mb-1">
                   Muallif
                 </p>
-                <p className="text-sm font-semibold">Humoyun Mirzo</p>
+                <p className="text-sm font-semibold">Abdurasuljonov Humoyun Mirzo</p>
               </div>
             </div>
 

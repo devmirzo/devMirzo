@@ -10,6 +10,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 export default function Contact() {
   const contactMethods = [
     {
@@ -33,8 +35,13 @@ export default function Contact() {
   ];
 
   return (
-    <div className="pt-28 md:pt-36 pb-24 px-5 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
-        <h1 className="hidden">Humoyun Mirzo Abdurasuljonov</h1><div className="max-w-7xl mx-auto">
+    <>
+      <Helmet>
+        <title>Bog'lanish | Abdurasuljonov Humoyun Mirzo</title>
+        <meta name="description" content="Abdurasuljonov Humoyun Mirzo bilan bog'lanish. Loyiha takliflari yoki savollar uchun xabar yuboring." />
+      </Helmet>
+      <div className="pt-28 md:pt-36 pb-24 px-5 bg-gradient-to-b from-[#f9f7ed] to-[#f3f1e6]">
+        <h1 className="hidden">Abdurasuljonov Humoyun Mirzo</h1><div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
           
           {/* LEFT SIDE */}
@@ -168,6 +175,7 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
