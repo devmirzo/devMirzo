@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+:root {
+  --bg-primary: #f9f7ed;
+  --text-primary: #2c3e63;
+}
+
+.dark {
+  --bg-primary: #0f172a;
+  --text-primary: #f8fafc;
+}
