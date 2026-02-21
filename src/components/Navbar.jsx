@@ -3,12 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles, ArrowUpRight, Sun, Moon } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -17,10 +23,10 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { name: "Asosiy", path: "/" },
-    { name: "Haqida", path: "/about" },
-    { name: "Loyihalar", path: "/projects" },
-    { name: "Blog", path: "/blog" },
+    { name: t("navbar.home"), path: "/" },
+    { name: t("navbar.about"), path: "/about" },
+    { name: t("navbar.projects"), path: "/projects" },
+    { name: t("navbar.blog"), path: "/blog" },
   ];
 
   return (
@@ -83,13 +89,30 @@ export default function Navbar() {
             {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
           </button>
 
+          {/* Language Switcher */}
+          <div className="flex bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 rounded-xl p-1 gap-1">
+            {['uz', 'ru', 'en'].map((lng) => (
+              <button
+                key={lng}
+                onClick={() => changeLanguage(lng)}
+                className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase transition-all ${
+                  i18n.language === lng 
+                    ? "bg-[#2c3e63] text-white dark:bg-[#4f8cff]" 
+                    : "text-[#2c3e63]/40 dark:text-[#f8fafc]/40 hover:text-[#2c3e63] dark:hover:text-[#f8fafc]"
+                }`}
+              >
+                {lng}
+              </button>
+            ))}
+          </div>
+
           <Link
             to="/contact"
             className="group relative px-7 py-3 rounded-xl bg-[#2c3e63] dark:bg-[#4f8cff] text-white font-bold text-sm tracking-wide overflow-hidden"
           >
             <div className="absolute inset-0 bg-[#4f8cff] dark:bg-[#2c3e63] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             <span className="relative z-10 flex items-center gap-2 group-hover:text-[#1f2937] dark:group-hover:text-white">
-              Bog'laning <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
+              {t("navbar.contact")} <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
             </span>
           </Link>
         </div>
@@ -137,7 +160,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            <ul className="flex flex-col gap-8">
+            <ul className="flex flex-col gap-6">
               {links.map((link, i) => (
                 <motion.li
                   key={link.name}
@@ -148,7 +171,7 @@ export default function Navbar() {
                   <Link
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`text-5xl font-black leading-none ${
+                    className={`text-4xl sm:text-5xl font-black leading-none ${
                       location.pathname === link.path
                         ? "text-[#4f8cff]"
                         : "text-[#2c3e63] dark:text-[#f8fafc]"
@@ -160,7 +183,34 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className="mt-auto">
+            <div className="mt-auto space-y-8">
+              {/* Mobile Language Switcher */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex items-center gap-4"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-[#2c3e63]/40 dark:text-[#f8fafc]/40">
+                  {t("navbar.language")}:
+                </span>
+                <div className="flex bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 rounded-xl p-1 gap-1">
+                  {['uz', 'ru', 'en'].map((lng) => (
+                    <button
+                      key={lng}
+                      onClick={() => changeLanguage(lng)}
+                      className={`px-4 py-2 rounded-lg text-xs font-bold uppercase transition-all ${
+                        i18n.language === lng 
+                          ? "bg-[#2c3e63] text-white dark:bg-[#4f8cff]" 
+                          : "text-[#2c3e63]/40 dark:text-[#f8fafc]/40"
+                      }`}
+                    >
+                      {lng}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -169,9 +219,9 @@ export default function Navbar() {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-3 bg-[#2c3e63] dark:bg-[#4f8cff] text-[#fcfaee] py-5 rounded-[2rem] font-black text-2xl mt-8 shadow-2xl shadow-[#2c3e63]/30 hover:bg-[#4f8cff] dark:hover:bg-white dark:hover:text-[#0f172a] transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-3 bg-[#2c3e63] dark:bg-[#4f8cff] text-[#fcfaee] py-5 rounded-[2rem] font-black text-xl sm:text-2xl shadow-2xl shadow-[#2c3e63]/30 hover:bg-[#4f8cff] dark:hover:bg-white dark:hover:text-[#0f172a] transition-colors"
                 >
-                  Bog'laning <Sparkles size={24} />
+                  {t("navbar.contact")} <Sparkles size={24} />
                 </Link>
               </motion.div>
             </div>

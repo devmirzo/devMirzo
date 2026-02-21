@@ -10,9 +10,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
-  const titles = ["Humoyun Mirzo", "Front-End Developer", "Student","Mentor"];
+  const { t } = useTranslation();
+  const titles = t("hero.titles", { returnObjects: true }) || ["Humoyun Mirzo", "Front-End Developer", "Student", "Mentor"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -56,11 +58,11 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#2c3e63] dark:bg-[#4f8cff] text-white text-[11px] font-semibold uppercase tracking-widest mb-8 shadow-lg"
           >
             <Sparkles size={14} className="text-[#4f8cff] dark:text-[#0f172a]" />
-            Creative Developer
+            {t("hero.badge")}
           </motion.div>
 
           {/* Dynamic Title */}
-          <div className="relative h-[140px] sm:h-[170px] md:h-[200px] flex items-center">
+          <div className="relative h-[120px] sm:h-[150px] md:h-[180px] lg:h-[200px] flex items-center">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={titles[index]}
@@ -68,7 +70,7 @@ export default function Home() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -60, opacity: 0 }}
                 transition={{ duration: 0.6 }}
-                className="absolute text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[92px] font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[0.95] tracking-tight"
+                className="absolute text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[92px] font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1] tracking-tight"
               >
                 {titles[index] === "Humoyun Mirzo" ? (
                   <>
@@ -86,12 +88,8 @@ export default function Home() {
             </AnimatePresence>
           </div>
 
-          <p className="text-[#2c3e63]/70 dark:text-[#f8fafc]/70 text-lg md:text-xl mt-6 mb-10 max-w-xl leading-relaxed font-medium">
-            Murakkab interfeyslarni raqamli san'at darajasiga olib chiqaman.
-            <span className="text-[#1f2937] dark:text-[#f8fafc] font-bold border-b-2 border-[#4f8cff] ml-1">
-              IT-Universe
-            </span>{" "}
-            akademiyasida mentor.
+          <p className="text-[#2c3e63]/70 dark:text-[#f8fafc]/70 text-base md:text-lg lg:text-xl mt-6 mb-10 max-w-xl leading-relaxed font-medium">
+            {t("hero.description")}
           </p>
 
           {/* Buttons */}
@@ -100,7 +98,7 @@ export default function Home() {
               to="/projects"
               className="bg-[#1f2937] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] px-10 py-4 rounded-2xl font-semibold text-sm uppercase tracking-wider hover:bg-[#2c3e63] dark:hover:bg-white transition-all flex items-center gap-3 shadow-xl hover:-translate-y-1 active:scale-95"
             >
-              Loyihalar
+              {t("hero.cta")}
               <ArrowRight
                 size={18}
                 className="text-[#4f8cff] dark:text-[#0f172a] group-hover:translate-x-2 transition"
@@ -158,7 +156,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-[#2c3e63]/50 dark:text-[#f8fafc]/50 font-bold">
-                    Asosiy mahorat
+                  {t("hero.main_skill")}
                   </p>
                   <p className="text-sm font-bold text-[#1f2937] dark:text-[#f8fafc]">
                     React & Next.js
@@ -177,10 +175,10 @@ export default function Home() {
                 <GraduationCap size={20} className="text-[#4f8cff]" />
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-                    Akademik
+                    {t("hero.academic")}
                   </p>
                   <p className="text-sm font-bold text-white">
-                    FDTU Engineer
+                    {t("hero.fdtu")}
                   </p>
                 </div>
               </div>
@@ -188,7 +186,7 @@ export default function Home() {
 
             {/* Experience Badge */}
             <div className="absolute -bottom-5 right-8 bg-[#4f8cff] text-[#1f2937] px-6 py-2 rounded-xl font-bold text-xs uppercase tracking-wide shadow-lg">
-              2+ Yillik Tajriba
+              {t("hero.experience_badge")}
             </div>
           </div>
         </motion.div>

@@ -1,0 +1,148 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "Creative Developer",
+    "title": "Humoyun",
+    "subtitle": "Dev Portfolio",
+    "description": "I bring complex interfaces to the level of digital art. Mentor at IT-Universe Academy.",
+    "cta": "Projects",
+    "titles": ["Humoyun Mirzo", "Front-End Developer", "Student", "Mentor"],
+    "main_skill": "Main Skill",
+    "academic": "Academic",
+    "fdtu": "FDTU Engineer",
+    "experience_badge": "2+ Years Experience"
+  },
+  "about": {
+    "badge": "My Story",
+    "title": "The Harmony of Coding and Education.",
+    "intro": "I am <1>Humoyun Mirzo</1>, an engineering student and IT-mentor. My goal is to make people's lives easier through technology and share modern knowledge with the new generation of developers.",
+    "stats": {
+      "gpa": "Academic GPA",
+      "jlpt": "JLPT Level",
+      "students": "Students"
+    },
+    "experience_title": "Experience & Education",
+    "timeline": {
+      "fdtu": {
+        "year": "2022 - Present",
+        "title": "FDTU Student",
+        "subtitle": "Software Engineering",
+        "desc": "Studying with high academic performance (GPA 4.0). Working on combining theory and practice."
+      },
+      "mentor": {
+        "year": "2023 - 2024",
+        "title": "IT-Universe Mentor",
+        "subtitle": "Head of Front-End Courses",
+        "desc": "Taught JavaScript and React ecosystem to over 180 young people in Fergana and Andijan branches."
+      },
+      "jlpt": {
+        "year": "2024",
+        "title": "Japanese Language (JLPT)",
+        "subtitle": "N3 Level Certificate",
+        "desc": "Obtained international JLPT N3 certificate and started exploring the global IT market."
+      }
+    },
+    "technical_skills": "Technical Skills",
+    "tech_stack": "Technology Stack",
+    "skills_list": {
+      "frontend": "Frontend Development",
+      "mentoring": "Mentoring & Teaching",
+      "japanese": "Japanese (JLPT N3)"
+    }
+  },
+  "projects": {
+    "badge": "My Portfolio",
+    "title": "Selected Projects.",
+    "description": "Each project is a new technological experience and a digital solution to a user problem.",
+    "list": {
+      "elearning": {
+        "title": "E-Learning Platform",
+        "category": "Web Application",
+        "desc": "Student and lesson management system specifically designed for IT-Universe training center."
+      },
+      "jlpt": {
+        "title": "JLPT Master App",
+        "category": "Mobile First UI",
+        "desc": "Interactive word memorization and testing platform to improve Japanese language level."
+      },
+      "portfolio": {
+        "title": "HMA Portfolio v4",
+        "category": "Personal Brand",
+        "desc": "The portfolio you are currently viewing. Built using Tailwind v4 and Framer Motion."
+      }
+    },
+    "cta": {
+      "title": "All my projects are open source.",
+      "text": "If you want to study code architecture and structure, all repositories are available on my GitHub profile.",
+      "button": "GitHub Profile"
+    }
+  },
+  "blog": {
+    "badge": "Knowledge Treasure",
+    "title": "Thoughts and Experiences.",
+    "description": "You can read my articles about programming, languages, and personal development here.",
+    "categories": {
+      "all": "All",
+      "programming": "Programming",
+      "japanese": "Japanese",
+      "mentoring": "Mentoring",
+      "life": "Life"
+    },
+    "search": "Search articles...",
+    "read_more": "Read More",
+    "read_time": "{{count}} min read",
+    "newsletter": {
+      "title": "Stay updated.",
+      "description": "I send the best articles and IT tutorials to your inbox once a week.",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "unsubscribe": "You can unsubscribe at any time"
+    },
+    "not_found": "Article not found!",
+    "back_to_blog": "Back to Blog",
+    "back": "Back",
+    "author": "Author",
+    "important_point": "Important Point: Stability",
+    "stability_text": "In programming, it's more important to strengthen fundamental knowledge than to chase trends.",
+    "conclusion": "In Conclusion",
+    "ask_question": "Ask a Question"
+  },
+  "contact": {
+    "badge": "Ready for collaboration",
+    "title": "Let's create together.",
+    "intro": "Leave a message for new projects, mentoring, or just to talk about IT. I'm always open to new ideas.",
+    "form": {
+      "name": "Full Name",
+      "name_placeholder": "Enter your name",
+      "email": "Email Address",
+      "email_placeholder": "email@example.com",
+      "subject": "Select Subject",
+      "message": "Your Message",
+      "message_placeholder": "How can I help you?",
+      "button": "Send Message",
+      "subjects": {
+        "project": "Project Order",
+        "mentoring": "IT-Mentoring & Courses",
+        "collaboration": "Collaboration Proposal",
+        "other": "Other matters"
+      }
+    },
+    "location": "Fergana, Uzbekistan"
+  },
+  "footer": {
+    "thought": "Thinking about a project?",
+    "cta": "Let's create together.",
+    "contact": "Contact",
+    "brand_desc": "Creating seamless user experiences by combining complex tech solutions with clean design.",
+    "menu": "Menu",
+    "rights": "All rights reserved",
+    "made_with": "Made with"
+  }
+}

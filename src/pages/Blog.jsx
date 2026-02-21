@@ -10,21 +10,23 @@ import {
 import { Link } from "react-router-dom";
 
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export default function Blog() {
+  const { t } = useTranslation();
   const categories = [
-    "Barchasi",
-    "Dasturlash",
-    "Yapon tili",
-    "Mentoring",
-    "Hayot",
+    t("blog.categories.all"),
+    t("blog.categories.programming"),
+    t("blog.categories.japanese"),
+    t("blog.categories.mentoring"),
+    t("blog.categories.life"),
   ];
 
   const posts = [
     {
       id: 1,
       title: "React v19: Nimalar yangi?",
-      category: "Dasturlash",
+      category: t("blog.categories.programming"),
       date: "Feb 12, 2026",
       excerpt:
         "Yaqinda chiqqan React 19 versiyasidagi eng muhim o'zgarishlar va ularning amaliy tahlili...",
@@ -35,7 +37,7 @@ export default function Blog() {
     {
       id: 2,
       title: "JLPT N3 imtihoniga tayyorlanish",
-      category: "Yapon tili",
+      category: t("blog.categories.japanese"),
       date: "Jan 25, 2026",
       excerpt:
         "Yapon tili darajasini oshirishda lug'at boyligi va grammatikani qanday o'rganish kerak?",
@@ -46,7 +48,7 @@ export default function Blog() {
     {
       id: 3,
       title: "Mentorlik san'ati",
-      category: "Mentoring",
+      category: t("blog.categories.mentoring"),
       date: "Jan 10, 2026",
       excerpt:
         "O'quvchilarga bilim berishda eng samarali metodikalar va shaxsiy tajribalarim...",
@@ -76,19 +78,22 @@ export default function Blog() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 text-[#2c3e63] dark:text-[#f8fafc] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10 dark:border-white/10">
               <Sparkles size={14} className="text-[#4f8cff]" />
-              Bilimlar xazinasi
+              {t("blog.badge")}
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-tight">
-              Fikrlar va{" "}
-              <span className="text-[#4f8cff] italic font-light">
-                Tajribalar.
-              </span>
+                {t("blog.title").split(". ").length > 1 ? (
+                  <>
+                    {t("blog.title").split(". ")[0]}.{" "}
+                    <span className="text-[#4f8cff] italic font-light">
+                      {t("blog.title").split(". ")[1]}
+                    </span>
+                  </>
+                ) : t("blog.title")}
             </h1>
 
             <p className="text-lg md:text-xl text-[#1e293b]/70 dark:text-[#f8fafc]/70 leading-relaxed font-medium max-w-2xl">
-              Dasturlash, tillar va shaxsiy rivojlanish haqidagi maqolalarimni
-              shu yerda o'qishingiz mumkin.
+              {t("blog.description")}
             </p>
           </motion.div>
 
@@ -116,7 +121,7 @@ export default function Blog() {
               />
               <input
                 type="text"
-                placeholder="Maqola qidirish..."
+                placeholder={t("blog.search")}
                 className="w-full pl-12 pr-4 py-3 rounded-xl bg-white dark:bg-[#1e293b] border border-[#2c3e63]/10 dark:border-white/10 focus:border-[#4f8cff] dark:focus:border-[#4f8cff] focus:ring-2 focus:ring-[#4f8cff]/30 outline-none text-[#1e293b] dark:text-[#f8fafc] font-medium"
               />
             </div>
@@ -160,7 +165,7 @@ export default function Blog() {
                       <span className="w-1 h-1 bg-[#4f8cff] rounded-full"></span>
                       <span className="flex items-center gap-1">
                         <Clock size={14} className="text-[#4f8cff]" />
-                        {post.readTime}
+                        {t("blog.read_time", { count: parseInt(post.readTime) })}
                       </span>
                     </div>
 
@@ -176,7 +181,7 @@ export default function Blog() {
                   </p>
 
                   <div className="flex items-center gap-2 text-sm font-semibold text-[#2c3e63] dark:text-[#f8fafc] group-hover:gap-4 transition-all">
-                    Batafsil
+                    {t("blog.read_more")}
                     <ArrowRight size={18} className="text-[#4f8cff]" />
                   </div>
                 </div>
@@ -200,14 +205,17 @@ export default function Blog() {
           <div className="grid lg:grid-cols-2 gap-10 items-center relative z-10">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
-                Yangiliklardan{" "}
-                <span className="text-[#4f8cff]">
-                  xabardor bo'ling.
-                </span>
+                  {t("blog.newsletter.title").split(". ").length > 1 ? (
+                    <>
+                      {t("blog.newsletter.title").split(". ")[0]}.{" "}
+                      <span className="text-[#4f8cff]">
+                        {t("blog.newsletter.title").split(". ")[1]}
+                      </span>
+                    </>
+                  ) : t("blog.newsletter.title")}
               </h2>
               <p className="text-white/70 max-w-md">
-                Eng sara maqolalar va IT darsliklarni haftasiga bir marta
-                pochtangizga yuboraman.
+                {t("blog.newsletter.description")}
               </p>
             </div>
 
@@ -218,16 +226,16 @@ export default function Blog() {
               >
                 <input
                   type="email"
-                  placeholder="Email manzilingiz"
+                  placeholder={t("blog.newsletter.placeholder")}
                   className="w-full px-5 py-3 rounded-xl bg-white dark:bg-[#0f172a] text-[#1e293b] dark:text-[#f8fafc] outline-none focus:ring-2 focus:ring-[#4f8cff]"
                 />
 
                 <button className="w-full py-3 bg-[#4f8cff] text-white dark:text-[#0f172a] font-semibold rounded-xl hover:bg-white dark:hover:bg-white hover:text-[#2c3e63] transition-all flex items-center justify-center gap-2">
-                  Obuna bo'lish <ArrowRight size={18} />
+                  {t("blog.newsletter.button")} <ArrowRight size={18} />
                 </button>
 
                 <p className="text-center text-white/40 text-xs">
-                  Istagan vaqtingizda obunani bekor qilishingiz mumkin
+                  {t("blog.newsletter.unsubscribe")}
                 </p>
               </form>
             </div>

@@ -12,15 +12,17 @@ import {
 } from "lucide-react";
 
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export default function BlogDetail() {
   const { id } = useParams();
+  const { t } = useTranslation();
 
   const posts = [
     {
       id: 1,
       title: "React v19: Nimalar yangi?",
-      category: "Dasturlash",
+      category: t("blog.categories.programming"),
       date: "Feb 12, 2026",
       excerpt:
         "Yaqinda chiqqan React 19 versiyasidagi eng muhim o'zgarishlar va ularning amaliy tahlili bilan tanishing.",
@@ -44,14 +46,14 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#f9f7ed] space-y-6 px-6">
-        <h2 className="text-3xl md:text-4xl font-black text-[#2c3e63]">
-          Maqola topilmadi!
-        </h2>
+      <h2 className="text-3xl md:text-4xl font-black text-[#2c3e63]">
+        {t("blog.not_found")}
+      </h2>
         <Link
           to="/blog"
           className="px-8 py-3 bg-[#2c3e63] text-white rounded-xl font-semibold hover:bg-[#1f2937] transition"
         >
-          Blogga qaytish
+          {t("blog.back_to_blog")}
         </Link>
       </div>
     );
@@ -82,7 +84,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
             <div className="p-2 rounded-full border border-[#2c3e63]/10 dark:border-white/10 group-hover:border-[#4f8cff] group-hover:-translate-x-1 transition">
               <ArrowLeft size={16} />
             </div>
-            Ortga qaytish
+            {t("blog.back")}
           </Link>
 
           <div className="space-y-6">
@@ -107,7 +109,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
               </div>
               <div className="text-left">
                 <p className="text-[10px] opacity-50 leading-none mb-1">
-                  Muallif
+                  {t("blog.author")}
                 </p>
                 <p className="text-sm font-semibold">Abdurasuljonov Humoyun Mirzo</p>
               </div>
@@ -120,7 +122,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
 
             <span className="flex items-center gap-2">
               <Clock size={15} className="text-[#4f8cff]" />
-              5 daqiqa mutolaa
+              {t("blog.read_time", { count: 5 })}
             </span>
           </div>
         </div>
@@ -180,14 +182,14 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
                 <div className="my-14 p-8 bg-[#f9f7ed] dark:bg-[#0f172a] rounded-2xl border border-[#4f8cff]/20 relative overflow-hidden group">
                   <Sparkles className="absolute top-5 right-5 text-[#4f8cff]/40 group-hover:rotate-12 transition" />
                   <h3 className="text-xl font-bold text-[#2c3e63] dark:text-[#f8fafc] mb-3">
-                    Muhim nuqta: Barqarorlik
+                    {t("blog.important_point")}
                   </h3>
                   <p className="m-0 text-[#2c3e63]/80 dark:text-[#f8fafc]/80">
-                    Dasturlashda trendlar ortidan quvish emas, fundamental bilimlarni mustahkamlash muhimdir.
+                    {t("blog.stability_text")}
                   </p>
                 </div>
 
-                <h2>Xulosa o'rnida</h2>
+                <h2>{t("blog.conclusion")}</h2>
                 <p>
                   React 19 bilan ishlash orqali biz tezroq ilovalar yaratamiz va
                   dasturchi sifatida yangi bosqichga chiqamiz.
@@ -229,7 +231,7 @@ Bu versiyaning asosiy maqsadi dasturchilarni ortiqcha 'useMemo' va 'useCallback'
                   to="/contact"
                   className="inline-block px-8 py-3 bg-[#4f8cff] text-[#1f2937] dark:text-[#0f172a] rounded-xl font-semibold hover:bg-white dark:hover:bg-white transition"
                 >
-                  Savol yo'llash
+                  {t("blog.ask_question")}
                 </Link>
               </div>
             </motion.div>

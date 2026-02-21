@@ -9,12 +9,14 @@ import {
 } from "lucide-react";
 
 import { Helmet } from "react-helmet-async";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
   const skills = [
-    { name: "Frontend Development", level: "85%", icon: <Code2 size={18} /> },
-    { name: "Mentoring & Teaching", level: "90%", icon: <Heart size={18} /> },
-    { name: "Japanese (JLPT N3)", level: "70%", icon: <Languages size={18} /> },
+    { name: t("about.skills_list.frontend"), level: "85%", icon: <Code2 size={18} /> },
+    { name: t("about.skills_list.mentoring"), level: "90%", icon: <Heart size={18} /> },
+    { name: t("about.skills_list.japanese"), level: "70%", icon: <Languages size={18} /> },
   ];
 
   return (
@@ -41,32 +43,41 @@ export default function About() {
             <div className="space-y-5">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 text-[#2c3e63] dark:text-[#f8fafc] text-[11px] font-bold uppercase tracking-[0.25em] border border-[#2c3e63]/10 dark:border-white/10">
                 <Sparkles size={14} className="text-[#4f8cff]" />
-                Mening Hikoyam
+                {t("about.badge")}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1.05] tracking-tight">
-                Dasturlash va{" "}
-                <span className="text-[#4f8cff] font-light italic">
-                  Ta'lim uyg'unligi.
-                </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1] tracking-tight">
+                {t("about.title").split(". ").length > 1 ? (
+                  <>
+                    {t("about.title").split(". ")[0]}.{" "}
+                    <span className="text-[#4f8cff] font-light italic">
+                      {t("about.title").split(". ")[1]}
+                    </span>
+                  </>
+                ) : t("about.title")}
               </h1>
             </div>
 
-            <p className="text-lg md:text-xl text-[#1e293b]/80 dark:text-[#f8fafc]/80 leading-relaxed max-w-2xl font-medium">
-              Men{" "}
-              <span className="font-black text-[#1e293b] dark:text-[#f8fafc] underline decoration-[#4f8cff] decoration-4 underline-offset-4">
-                Humoyun Mirzo
-              </span>
-              , muhandislik talabasi va IT-mentoriman. Maqsadim —
-              texnologiyalar orqali insonlar hayotini osonlashtirish va yangi
-              avlod dasturchilariga zamonaviy bilimlarni ulashishdir.
+            <p className="text-base md:text-lg lg:text-xl text-[#1e293b]/80 dark:text-[#f8fafc]/80 leading-relaxed max-w-2xl font-medium">
+              <Trans
+                i18nKey="about.intro"
+                components={[
+                  <br key="br" />,
+                  <span
+                    key="span"
+                    className="font-black text-[#1e293b] dark:text-[#f8fafc] underline decoration-[#4f8cff] decoration-4 underline-offset-4"
+                  />,
+                ]}
+              />
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-6 pt-6">
-              <StatItem value="4.0" label="Akademik GPA" />
-              <StatItem value="N3" label="JLPT Daraja" />
-              <StatItem value="180+" label="O'quvchilar" />
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-6 pt-6">
+              <StatItem value="4.0" label={t("about.stats.gpa")} />
+              <StatItem value="N3" label={t("about.stats.jlpt")} />
+              <div className="col-span-2 sm:col-span-1">
+                <StatItem value="180+" label={t("about.stats.students")} />
+              </div>
             </div>
           </motion.div>
 
@@ -100,29 +111,29 @@ export default function About() {
               <div className="p-4 bg-[#2c3e63] dark:bg-[#4f8cff] text-white dark:text-[#0f172a] rounded-2xl shadow-md">
                 <Briefcase size={26} />
               </div>
-              Tajriba va Ta'lim
+              {t("about.experience_title")}
             </h3>
 
             <div className="space-y-10 border-l-2 border-[#2c3e63]/10 dark:border-white/10 pl-8 ml-4">
               <TimelineItem
-                year="2022 - Hozir"
-                title="FDTU Talabasi"
-                subtitle="Dasturiy Ta'minot Muhandisligi"
-                desc="Universitetda yuqori akademik ko'rsatkichlar (GPA 4.0) bilan tahsil olmoqdaman. Nazariya va amaliyotni birlashtirish ustida ishlayapman."
+                year={t("about.timeline.fdtu.year")}
+                title={t("about.timeline.fdtu.title")}
+                subtitle={t("about.timeline.fdtu.subtitle")}
+                desc={t("about.timeline.fdtu.desc")}
               />
 
               <TimelineItem
-                year="2023 - 2024"
-                title="IT-Universe Mentor"
-                subtitle="Front-End Kurslari Rahbari"
-                desc="Farg'ona va Andijon filiallarida 180 dan ortiq yoshlarga JavaScript va React ekotizimini o'rgatdim."
+                year={t("about.timeline.mentor.year")}
+                title={t("about.timeline.mentor.title")}
+                subtitle={t("about.timeline.mentor.subtitle")}
+                desc={t("about.timeline.mentor.desc")}
               />
 
               <TimelineItem
-                year="2024"
-                title="Yapon Tili (JLPT)"
-                subtitle="N3 Level Certificate"
-                desc="Xalqaro darajadagi JLPT N3 sertifikatini qo'lga kiritdim va global IT bozorini o'rganishni boshladim."
+                year={t("about.timeline.jlpt.year")}
+                title={t("about.timeline.jlpt.title")}
+                subtitle={t("about.timeline.jlpt.subtitle")}
+                desc={t("about.timeline.jlpt.desc")}
               />
             </div>
           </div>
@@ -133,7 +144,7 @@ export default function About() {
               <div className="p-4 bg-[#4f8cff] text-white rounded-2xl shadow-md">
                 <Star size={26} />
               </div>
-              Texnik Mahorat
+              {t("about.technical_skills")}
             </h3>
 
             <div className="bg-white dark:bg-[#1e293b] p-10 rounded-[3rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] border border-[#2c3e63]/5 dark:border-white/5 space-y-8 transition-colors">
@@ -175,7 +186,7 @@ export default function About() {
               {/* Stack */}
               <div className="pt-6 border-t border-[#2c3e63]/10 dark:border-white/10">
                 <p className="text-xs font-semibold text-[#2c3e63]/40 dark:text-[#f8fafc]/40 uppercase tracking-widest mb-5 text-center">
-                  Texnologik Stack
+                  {t("about.tech_stack")}
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">

@@ -9,31 +9,33 @@ import {
 } from "lucide-react";
 
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 
 export default function Projects() {
+  const { t } = useTranslation();
   const projects = [
     {
-      title: "E-Learning Platform",
-      category: "Web Application",
-      desc: "IT-Universe o'quv markazi uchun maxsus ishlab chiqilgan, talabalar va darslarni boshqarish tizimi.",
+      title: t("projects.list.elearning.title"),
+      category: t("projects.list.elearning.category"),
+      desc: t("projects.list.elearning.desc"),
       tech: ["React", "Node.js", "Firebase"],
       image:
         "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80",
       icon: <Layers size={18} />,
     },
     {
-      title: "JLPT Master App",
-      category: "Mobile First UI",
-      desc: "Yapon tili darajasini oshirish uchun interaktiv so'z yodlash va test topshirish platformasi.",
+      title: t("projects.list.jlpt.title"),
+      category: t("projects.list.jlpt.category"),
+      desc: t("projects.list.jlpt.desc"),
       tech: ["React Native", "Tailwind", "Zustand"],
       image:
         "https://images.unsplash.com/photo-1528181304800-2f1738b99546?w=800&q=80",
       icon: <Rocket size={18} />,
     },
     {
-      title: "HMA Portfolio v4",
-      category: "Personal Brand",
-      desc: "Hozirgi ko'rib turgan portfoliongiz. Tailwind v4 va Framer Motion yordamida yaratilgan.",
+      title: t("projects.list.portfolio.title"),
+      category: t("projects.list.portfolio.category"),
+      desc: t("projects.list.portfolio.desc"),
       tech: ["Vite", "Tailwind v4", "Framer Motion"],
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
@@ -61,14 +63,18 @@ export default function Projects() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 border border-[#2c3e63]/10 dark:border-white/10 text-[#2c3e63] dark:text-[#f8fafc] text-[11px] font-semibold uppercase tracking-[0.25em]">
               <Sparkles size={14} className="text-[#4f8cff]" />
-              Portfoliom
+              {t("projects.badge")}
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[0.95] tracking-tight">
-              Tanlangan <br />
-              <span className="text-[#4f8cff] italic font-light">
-                Loyihalar.
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] leading-[1] tracking-tight">
+                {t("projects.title").split(". ").length > 1 ? (
+                  <>
+                    {t("projects.title").split(". ")[0]}.{" "}
+                    <span className="text-[#4f8cff] italic font-light">
+                      {t("projects.title").split(". ")[1]}
+                    </span>
+                  </>
+                ) : t("projects.title")}
             </h1>
           </motion.div>
 
@@ -78,7 +84,7 @@ export default function Projects() {
             viewport={{ once: true }}
             className="text-[#2c3e63]/60 dark:text-[#f8fafc]/60 max-w-md text-base md:text-lg font-medium leading-relaxed border-l-2 border-[#4f8cff] pl-6 py-2"
           >
-            Har bir loyiha — bu yangi texnologik tajriba va foydalanuvchi muammosiga topilgan raqamli yechimdir.
+            {t("projects.description")}
           </motion.p>
         </div>
 
@@ -139,7 +145,7 @@ export default function Projects() {
               {/* CONTENT */}
               <div className="mt-8 px-2 flex flex-col flex-1">
                 <div className="flex items-center mb-4">
-                  <h3 className="text-xl font-black text-[#2c3e63] dark:text-[#f8fafc]">
+                  <h3 className="text-lg md:text-xl font-black text-[#2c3e63] dark:text-[#f8fafc]">
                     {project.title}
                   </h3>
                   <div className="h-[2px] flex-1 ml-4 bg-[#2c3e63]/10 dark:bg-white/10 group-hover:bg-[#4f8cff]/30 transition" />
@@ -174,15 +180,18 @@ export default function Projects() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#4f8cff]/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-[120px]" />
           <div className="relative z-10 max-w-2xl mx-auto space-y-8">
             <h2 className="text-3xl md:text-5xl font-black leading-tight">
-              Barcha loyihalarim <br />
-              <span className="text-[#4f8cff]">
-                ochiq manbalidir.
-              </span>
+              {t("projects.cta.title").split(". ").length > 1 ? (
+                <>
+                  {t("projects.cta.title").split(". ")[0]}.{" "}
+                  <span className="text-[#4f8cff]">
+                    {t("projects.cta.title").split(". ")[1]}
+                  </span>
+                </>
+              ) : t("projects.cta.title")}
             </h2>
 
             <p className="text-white/70 text-base md:text-lg font-medium">
-              Kod arxitekturasi va strukturasini o‘rganmoqchi bo‘lsangiz,
-              GitHub profilimda barcha repositoriyalar mavjud.
+              {t("projects.cta.text")}
             </p>
 
             <a
@@ -192,7 +201,7 @@ export default function Projects() {
               className="inline-flex items-center gap-4 px-10 py-5 bg-[#4f8cff] text-white dark:text-[#0f172a] rounded-2xl font-semibold hover:bg-white dark:hover:bg-white hover:text-[#2c3e63] dark:hover:text-[#0f172a] transition shadow-xl hover:-translate-y-1"
             >
               <Github size={22} />
-              Github Profilim
+              {t("projects.cta.button")}
             </a>
           </div>
         </motion.div>

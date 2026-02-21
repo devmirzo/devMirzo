@@ -10,8 +10,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const containerRef = useRef(null);
 
@@ -23,11 +25,11 @@ export default function Footer() {
   const xMovement = useTransform(scrollYProgress, [0, 1], [120, -250]);
 
   const links = [
-    { name: "Asosiy", path: "/" },
-    { name: "Haqida", path: "/about" },
-    { name: "Loyihalar", path: "/projects" },
-    { name: "Blog", path: "/blog" },
-    { name: "Aloqa", path: "/contact" },
+    { name: t("navbar.home"), path: "/" },
+    { name: t("navbar.about"), path: "/about" },
+    { name: t("navbar.projects"), path: "/projects" },
+    { name: t("navbar.blog"), path: "/blog" },
+    { name: t("navbar.contact"), path: "/contact" },
   ];
 
   const socialLinks = [
@@ -63,14 +65,18 @@ export default function Footer() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2c3e63]/5 dark:bg-[#f8fafc]/5 text-[#2c3e63] dark:text-[#f8fafc] text-xs font-semibold uppercase tracking-widest mb-6 border border-[#2c3e63]/10 dark:border-white/10">
               <Sparkles size={14} className="text-[#4f8cff]" />
-              Loyiha haqida o'ylayapsizmi?
+              {t("footer.thought")}
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#2c3e63] dark:text-[#f8fafc] tracking-tight leading-[0.95]">
-              Keling, birga <br />
-              <span className="text-[#4f8cff] italic font-light">
-                yaratamiz.
-              </span>
+                {t("footer.cta").split(". ").length > 1 ? (
+                  <>
+                    {t("footer.cta").split(". ")[0]}.{" "}
+                    <span className="text-[#4f8cff] italic font-light">
+                      {t("footer.cta").split(". ")[1]}
+                    </span>
+                  </>
+                ) : t("footer.cta")}
             </h2>
           </motion.div>
 
@@ -79,7 +85,7 @@ export default function Footer() {
               to="/contact"
               className="px-10 py-5 bg-[#2c3e63] dark:bg-[#4f8cff] rounded-2xl flex items-center gap-4 text-white dark:text-[#0f172a] font-semibold text-sm uppercase tracking-wider hover:bg-[#1f2937] dark:hover:bg-white transition-all shadow-xl hover:-translate-y-1"
             >
-              Bog'lanish
+              {t("footer.contact")}
               <ArrowUpRight
                 size={20}
                 className="text-[#4f8cff] dark:text-[#0f172a]"
@@ -106,8 +112,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-[#2c3e63]/70 dark:text-[#f8fafc]/70 text-base leading-relaxed max-w-sm">
-              Murakkab texnologik yechimlarni oddiy va chiroyli dizayn bilan
-              birlashtirib, foydalanuvchilar uchun qulay tajribalar yarataman.
+              {t("footer.brand_desc")}
             </p>
 
             <div className="flex gap-4">
@@ -129,7 +134,7 @@ export default function Footer() {
           {/* MENU */}
           <div className="md:col-span-3">
             <p className="text-xs font-bold text-[#2c3e63]/30 dark:text-[#f8fafc]/30 uppercase tracking-[0.3em] mb-8">
-              Menyu
+              {t("footer.menu")}
             </p>
             <ul className="space-y-4">
               {links.map((link) => (
@@ -149,7 +154,7 @@ export default function Footer() {
           {/* CONTACT */}
           <div className="md:col-span-4 space-y-8">
             <p className="text-xs font-bold text-[#2c3e63]/30 dark:text-[#f8fafc]/30 uppercase tracking-[0.3em]">
-              Bog'lanish
+              {t("footer.contact")}
             </p>
 
             <div>
@@ -175,10 +180,10 @@ export default function Footer() {
         {/* COPYRIGHT */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
           <div className="flex items-center gap-3 text-[#2c3e63]/50 dark:text-[#f8fafc]/50 font-medium">
-            © {currentYear} Barcha huquqlar himoyalangan
+            © {currentYear} {t("footer.rights")}
             <span className="w-1.5 h-1.5 bg-[#4f8cff] rounded-full"></span>
             <span className="flex items-center gap-1">
-              Made with
+              {t("footer.made_with")}
               <Heart
                 size={14}
                 className="text-[#2c3e63] dark:text-[#f8fafc] fill-[#2c3e63] dark:fill-[#f8fafc] hover:text-red-500 hover:fill-red-500 transition"

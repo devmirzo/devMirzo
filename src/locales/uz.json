@@ -1,0 +1,148 @@
+{
+  "navbar": {
+    "home": "Asosiy",
+    "about": "Haqida",
+    "projects": "Loyihalar",
+    "blog": "Blog",
+    "contact": "Bog'laning",
+    "language": "Til"
+  },
+  "hero": {
+    "badge": "Ijodkor Dasturchi",
+    "title": "Humoyun",
+    "subtitle": "Dev Portfolio",
+    "description": "Murakkab interfeyslarni raqamli san'at darajasiga olib chiqaman. IT-Universe akademiyasida mentor.",
+    "cta": "Loyihalar",
+    "titles": ["Humoyun Mirzo", "Front-End Developer", "Talaba", "Mentor"],
+    "main_skill": "Asosiy mahorat",
+    "academic": "Akademik",
+    "fdtu": "FDTU Engineer",
+    "experience_badge": "2+ Yillik Tajriba"
+  },
+  "about": {
+    "badge": "Mening Hikoyam",
+    "title": "Dasturlash va Ta'lim uyg'unligi.",
+    "intro": "Men <1>Humoyun Mirzo</1>, muhandislik talabasi va IT-mentoriman. Maqsadim — texnologiyalar orqali insonlar hayotini osonlashtirish va yangi avlod dasturchilariga zamonaviy bilimlarni ulashishdir.",
+    "stats": {
+      "gpa": "Akademik GPA",
+      "jlpt": "JLPT Daraja",
+      "students": "O'quvchilar"
+    },
+    "experience_title": "Tajriba va Ta'lim",
+    "timeline": {
+      "fdtu": {
+        "year": "2022 - Hozir",
+        "title": "FDTU Talabasi",
+        "subtitle": "Dasturiy Ta'minot Muhandisligi",
+        "desc": "Universitetda yuqori akademik ko'rsatkichlar (GPA 4.0) bilan tahsil olmoqdaman. Nazariya va amaliyotni birlashtirish ustida ishlayapman."
+      },
+      "mentor": {
+        "year": "2023 - 2024",
+        "title": "IT-Universe Mentor",
+        "subtitle": "Front-End Kurslari Rahbari",
+        "desc": "Farg'ona va Andijon filiallarida 180 dan ortiq yoshlarga JavaScript va React ekotizimini o'rgatdim."
+      },
+      "jlpt": {
+        "year": "2024",
+        "title": "Yapon Tili (JLPT)",
+        "subtitle": "N3 Level Certificate",
+        "desc": "Xalqaro darajadagi JLPT N3 sertifikatini qo'lga kiritdim va global IT bozorini o'rganishni boshladim."
+      }
+    },
+    "technical_skills": "Texnik Mahorat",
+    "tech_stack": "Texnologik Stack",
+    "skills_list": {
+      "frontend": "Frontend Development",
+      "mentoring": "Mentoring & Teaching",
+      "japanese": "Japanese (JLPT N3)"
+    }
+  },
+  "projects": {
+    "badge": "Portfoliom",
+    "title": "Tanlangan Loyihalar.",
+    "description": "Har bir loyiha — bu yangi texnologik tajriba va foydalanuvchi muammosiga topilgan raqamli yechimdir.",
+    "list": {
+      "elearning": {
+        "title": "E-Learning Platform",
+        "category": "Web Application",
+        "desc": "IT-Universe o'quv markazi uchun maxsus ishlab chiqilgan, talabalar va darslarni boshqarish tizimi."
+      },
+      "jlpt": {
+        "title": "JLPT Master App",
+        "category": "Mobile First UI",
+        "desc": "Yapon tili darajasini oshirish uchun interaktiv so'z yodlash va test topshirish platformasi."
+      },
+      "portfolio": {
+        "title": "HMA Portfolio v4",
+        "category": "Shaxsiy Brend",
+        "desc": "Hozirgi ko'rib turgan portfoliongiz. Tailwind v4 va Framer Motion yordamida yaratilgan."
+      }
+    },
+    "cta": {
+      "title": "Barcha loyihalarim ochiq manbalidir.",
+      "text": "Kod arxitekturasi va strukturasini o‘rganmoqchi bo‘lsangiz, GitHub profilimda barcha repositoriyalar mavjud.",
+      "button": "GitHub Profilim"
+    }
+  },
+  "blog": {
+    "badge": "Bilimlar xazinasi",
+    "title": "Fikrlar va Tajribalar.",
+    "description": "Dasturlash, tillar va shaxsiy rivojlanish haqidagi maqolalarimni shu yerda o'qishingiz mumkin.",
+    "categories": {
+      "all": "Barchasi",
+      "programming": "Dasturlash",
+      "japanese": "Yapon tili",
+      "mentoring": "Mentoring",
+      "life": "Hayot"
+    },
+    "search": "Maqola qidirish...",
+    "read_more": "Batafsil",
+    "read_time": "{{count}} daqiqa mutolaa",
+    "newsletter": {
+      "title": "Yangiliklardan xabardor bo'ling.",
+      "description": "Eng sara maqolalar va IT darsliklarni haftasiga bir marta pochtangizga yuboraman.",
+      "placeholder": "Email manzilingiz",
+      "button": "Obuna bo'lish",
+      "unsubscribe": "Istagan vaqtingizda obunani bekor qilishingiz mumkin"
+    },
+    "not_found": "Maqola topilmadi!",
+    "back_to_blog": "Blogga qaytish",
+    "back": "Ortga qaytish",
+    "author": "Muallif",
+    "important_point": "Muhim nuqta: Barqarorlik",
+    "stability_text": "Dasturlashda trendlar ortidan quvish emas, fundamental bilimlarni mustahkamlash muhimdir.",
+    "conclusion": "Xulosa o'rnida",
+    "ask_question": "Savol yo'llash"
+  },
+  "contact": {
+    "badge": "Hamkorlikka tayyorman",
+    "title": "Keling, birga yaratamiz.",
+    "intro": "Yangi loyiha, mentoring yoki IT haqida suhbatlashish uchun xabar qoldiring. Men doimo yangi g'oyalar uchun ochiqman.",
+    "form": {
+      "name": "To'liq ismingiz",
+      "name_placeholder": "Ismingizni kiriting",
+      "email": "Email manzilingiz",
+      "email_placeholder": "email@example.com",
+      "subject": "Mavzuni tanlang",
+      "message": "Sizning xabaringiz",
+      "message_placeholder": "Qanday yordam bera olaman?",
+      "button": "Xabarni yuborish",
+      "subjects": {
+        "project": "Loyiha buyurtmasi",
+        "mentoring": "IT-Mentoring & Kurslar",
+        "collaboration": "Hamkorlik taklifi",
+        "other": "Boshqa masalalar"
+      }
+    },
+    "location": "Farg'ona, O'zbekiston"
+  },
+  "footer": {
+    "thought": "Loyiha haqida o'ylayapsizmi?",
+    "cta": "Keling, birga yaratamiz.",
+    "contact": "Bog'lanish",
+    "brand_desc": "Murakkab texnologik yechimlarni oddiy va chiroyli dizayn bilan birlashtirib, foydalanuvchilar uchun qulay tajribalar yarataman.",
+    "menu": "Menyu",
+    "rights": "Barcha huquqlar himoyalangan",
+    "made_with": "Made with"
+  }
+}
